@@ -27,6 +27,7 @@ syntax enable
 nmap <END> :nohl<CR>
 
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive'
 Plug 'puremourning/vimspector'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdtree'
@@ -252,6 +253,9 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_c_norminette_exec = '/usr/local/bin/norminette'
 let g:c_syntax_for_h = 1
 let g:syntastic_c_include_dirs = ['include', '../include', '../../include', 'libft', '../libft/include', '../../libft/include']
+"헤더파일에 대한 경로를 하단 파일에 추가
+let g:syntastic_c_config_file = '.my_custom_include_file_for_syntastic'
+
 let g:syntastic_c_norminette_args = '-R CheckForbiddenSourceHeaer'
 let g:syntastic_check_on_open = 0
 let g:syntastic_always_populate_loc_list = 1

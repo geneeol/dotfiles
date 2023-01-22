@@ -147,4 +147,4 @@ code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 # Load Homebrew config script
 source $HOME/.brewconfig.zsh
 
-bash /Users/dahkang/Desktop/cleaner/42seoul_link_all_cache_dirs.sh
+#bash /Users/dahkang/Desktop/cleaner/42seoul_link_all_cache_dirs.sh
