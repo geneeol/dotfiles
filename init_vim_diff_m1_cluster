@@ -1,0 +1,45 @@
+1,3c1
+< if has("syntax")
+< 	syntax on
+< endif
+---
+> syntax on
+30d27
+< Plug 'tpope/vim-fugitive'
+53c50,52
+< let g:NERDTreeMinimalMenu=1
+---
+> "set size=1 due to bug on cluster mac
+> "let g:NERDTreeMinimalMenu=1
+> set splitright
+60,61d58
+< "Opening newtab on the right side
+< set splitright
+250c247,248
+< nmap <Home> :SyntasticToggleMode<CR>
+---
+> "replacing home for -
+> nmap - :SyntasticToggleMode<CR>
+253c251
+< let g:syntastic_c_norminette_exec = '/usr/local/bin/norminette'
+---
+> let g:syntastic_c_norminette_exec = 'norminette'
+256c254,255
+< "헤더파일에 대한 경로를 하단 파일에 추가
+---
+> "클러스터랑 집 맥이랑 절대경로가 다름!
+> "따라서 프로젝트별로 상대경로로 적을 것
+258d256
+< 
+267,268d264
+< "
+< "Jump to function definition
+272d267
+< "<C-o> go back
+275a271,272
+> "if there is no Makefile then there'll be an error
+> "When you try to leave nvim, terminal still wait for some input
+280d276
+< "Opening floaterm in vim
+286d281
+< "auto pranthesis

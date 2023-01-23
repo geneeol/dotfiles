@@ -24,7 +24,9 @@ set termguicolors
 let mapleader = ","
 
 syntax enable
-nmap <END> :nohl<CR>
+if getenv("USER") != "kkab"
+	nmap <END> :nohl<CR>
+endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
@@ -50,15 +52,19 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 let g:NERDTreeWinSize=22
-let g:NERDTreeMinimalMenu=1
 
+"set size=1 due to resolve bug on cluster mac
+if getenv("USER") != "kkab"
+	let g:NERDTreeMinimalMenu=1
+endif
+
+"Opening newtab on the right side
+set splitright
 
 let g:hdr42user = 'dahkang'
 let g:hdr42mail = 'dahkang@student.42seoul.kr'
 nmap <F1> :Stdheader
 
-"Opening newtab on the right side
-set splitright
 
 "-----------------------------coc auto_select-----------------------------"
   " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
@@ -247,13 +253,25 @@ let g:better_whitespace_guicolor='Skyblue'
 
 
 "---------------------syntastic---------------------------"
-nmap <Home> :SyntasticToggleMode<CR>
+
+"My m1-laptop USER is set as kkab.
+"By using if, I can use the same config.file on different env
+if getenv("USER") == "kkab"
+	nmap <F3> :SyntasticToggleMode<CR>
+else
+	nmap <Home> :SyntasticToggleMode<CR>
+endif
+
 let g:syntastic_c_checkers = ['norminette', 'gcc']
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_c_norminette_exec = '/usr/local/bin/norminette'
+let g:syntastic_c_norminette_exec = 'norminette'
 let g:c_syntax_for_h = 1
 let g:syntastic_c_include_dirs = ['include', '../include', '../../include', 'libft', '../libft/include', '../../libft/include']
-"헤더파일에 대한 경로를 하단 파일에 추가
+
+"Make compileflag.txt first that contains all include path,
+"and ln -s compileflag.txt .my_custom_include_file_for_syntastic
+"Be careful! absolute path may vary depending on the environment.
+"So Should use relative path when setting compileflag.txt file
 let g:syntastic_c_config_file = '.my_custom_include_file_for_syntastic'
 
 let g:syntastic_c_norminette_args = '-R CheckForbiddenSourceHeaer'
@@ -264,7 +282,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler = 'c++'
 let g:syntastic_cpp_compiler_options = "-std=c++98 -Wall -Wextra -Werror -Wpedantic"
 "--------------------------------------------------------"
-"
 "Jump to function definition
 "ctags"
 nnoremap <leader>jj <C-]>
@@ -273,6 +290,8 @@ nnoremap <leader>bb <C-t>
 "---------------"
 "
 "-------------------gutentags------------------------"
+"if there is no Makefile then there'll be an error
+"When you try to leave nvim, terminal still wait for some input
 let g:gutentags_project_root = ['Makefile']
 set statusline+=%{gutentags#statusline()}
 "-------------------------------------------------"
@@ -283,7 +302,7 @@ let g:floaterm_keymap_toggle = '<Leader>tt'
 tnoremap <Esc> <C-\><C-n>
 "--------------------------------------------------
 "
-"auto pranthesis
+"auto parentheses
 " delmitMate-----------------------------------"
 let delimitMate_expand_cr=1
 let delimitMate_matchpairs = "(:),[:],{:}"

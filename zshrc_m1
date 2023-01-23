@@ -78,10 +78,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	zsh-syntax-highlighting
-	zsh-autosuggestions
-	fzf
+git
+zsh-syntax-highlighting
+zsh-autosuggestions
+fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -115,37 +115,16 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias wgcc='gcc -Wall -Wextra -Werror'
-alias norm='norminette -R CheckForbiddenSourceHeadeer'
-export MAIL='dahkang@student.42seoul.kr'
+alias wgcc="gcc -Wall -Wextra -Werror"
+alias norm="norminette -R CheckForbiddenSourceHeader"
+alias gpp="g++ -std=c++17 -Wall -Wextra"
 
-alias nvim='~/nvim-macos/bin/nvim'
-alias vimconfig='nvim ~/.config/nvim/init.vim'
-alias cdm='bash ~/createDefaultMakefile.sh'
+alias francinette=/Users/kkab/francinette/tester.sh
 
-alias francinette=/Users/dahkang/francinette/tester.sh
+alias paco=/Users/kkab/francinette/tester.sh
 
-alias paco=/Users/dahkang/francinette/tester.sh
-USER=dahkang
-export USER
-MAIL=dahkang@student.42.fr
-export MAIL
-USER=dahkang
-export USER
-MAIL=dahkang@student.42.fr
-export MAIL
-USER=dahkang
-export USER
-MAIL=dahkang@student.42.fr
-export MAIL
+alias vimconfig="nvim ~/.config/nvim/init.vim"
 
-#VsCode code cmd
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
-#
-#VsCode Doohkim path
-#export PATH=/Applications/Visual\ Studio\ Code\ 2.app/Contents/Resources/app/bin:$PATH
-
-# Load Homebrew config script
-source $HOME/.brewconfig.zsh
-
-#bash /Users/dahkang/Desktop/cleaner/42seoul_link_all_cache_dirs.sh
+# language
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8

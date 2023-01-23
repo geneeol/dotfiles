@@ -1,0 +1,61 @@
+81,83c81,84
+< 	git
+< 	zsh-syntax-highlighting
+< 	zsh-autosuggestions
+---
+> git
+> zsh-syntax-highlighting
+> zsh-autosuggestions
+> fzf
+117,139c118,120
+< alias wgcc='gcc -Wall -Wextra -Werror'
+< alias norm='norminette -R CheckForbiddenSourceHeadeer'
+< export MAIL='dahkang@student.42seoul.kr'
+< 
+< alias nvim='~/nvim-macos/bin/nvim'
+< alias vimconfig='nvim ~/.config/nvim/init.vim'
+< alias cdm='bash ~/createDefaultMakefile.sh'
+< 
+< alias francinette=/Users/dahkang/francinette/tester.sh
+< 
+< alias paco=/Users/dahkang/francinette/tester.sh
+< USER=dahkang
+< export USER
+< MAIL=dahkang@student.42.fr
+< export MAIL
+< USER=dahkang
+< export USER
+< MAIL=dahkang@student.42.fr
+< export MAIL
+< USER=dahkang
+< export USER
+< MAIL=dahkang@student.42.fr
+< export MAIL
+---
+> alias wgcc="gcc -Wall -Wextra -Werror"
+> alias norm="norminette -R CheckForbiddenSourceHeader"
+> alias gpp="g++ -std=c++17 -Wall -Wextra"
+141,145c122,126
+< #VsCode code cmd
+< code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+< #
+< #VsCode Doohkim path
+< #export PATH=/Applications/Visual\ Studio\ Code\ 2.app/Contents/Resources/app/bin:$PATH
+---
+> alias francinette=/Users/kkab/francinette/tester.sh
+> 
+> alias paco=/Users/kkab/francinette/tester.sh
+> 
+> alias vimconfig="nvim ~/.config/nvim/init.vim"
+147,148c128,129
+< # Load Homebrew config script
+< source $HOME/.brewconfig.zsh
+---
+> # push_swap visualizer
+> export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+150c131,133
+< #bash /Users/dahkang/Desktop/cleaner/42seoul_link_all_cache_dirs.sh
+---
+> # language
+> export LC_ALL=en_US.UTF-8
+> export LC_CTYPE=en_US.UTF-8
