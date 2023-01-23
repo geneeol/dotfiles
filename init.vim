@@ -257,7 +257,7 @@ let g:better_whitespace_guicolor='Skyblue'
 "My m1-laptop USER is set as kkab.
 "By using if, I can use the same config.file on different env
 if getenv("USER") == "kkab"
-	nmap <F3> :SyntasticToggleMode<CR>
+	nmap <leader>s :SyntasticToggleMode<CR>
 else
 	nmap <Home> :SyntasticToggleMode<CR>
 endif
