@@ -29,7 +29,6 @@ if getenv("USER") != "kkab"
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-fugitive'
 Plug 'puremourning/vimspector'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdtree'
@@ -43,6 +42,9 @@ Plug 'alexandregv/norminette-vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Raimondi/delimitMate'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'tpope/vim-fugitive'
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
 call plug#end()
 
 
@@ -339,3 +341,6 @@ nmap <leader>dc :!cc -g -I./libft/libft.h -L./libft/ -lft % -o main<CR>
 nmap <leader>aa <Plug>VimspectorUpFrame
 nmap <leader>ss <Plug>VimspectorDownFrame
 "--------------------------------------------------"
+"
+"-------------------vim-markdown-------------------"
+let g:vim_markdown_folding_disabled = 1
